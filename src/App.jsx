@@ -23,7 +23,7 @@ const changeIndex = () => {
           <UserCard users ={Data[index]} color = {colors[changeColor]} />
         }
         <button  onClick= { changeIndex } alt=""> 
-            <img src=  "./src/assets/sampling.png" alt="" /> 
+            <img src=  "https://solid-wandflower-98c.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5cb0b97a-e042-4f52-a797-70a5c17f52e1%2Fsampling.png?table=block&id=bd7178ee-261a-4e62-aead-ad903584e362&spaceId=258031e1-f7f6-4e76-94e6-2cd63ab6378f&width=250&userId=&cache=v2" alt="" /> 
         </button> 
     </div>
   )
