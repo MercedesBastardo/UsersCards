@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import UserCard from './components/UserCard'
+import Data from './data/Data'
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+const [ index, setIndex] = useState(0)
 
+const colors = ["#FDB137", "#785964", "#6D6875", "#B5838D", "#E5989B", "#7E9680", "#C73866", "#FFB4A2", "#79616F", "#EAB595" ]
+
+const changeColor =  Math.floor(Math.random() * colors.length);
+
+document.body.style = `background-color : ${colors[changeColor]} `
+
+
+const changeIndex = () => {
+  const newRandom = Math.floor(Math.random() * Data.length);
+  setIndex(newRandom);
+};
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        { 
+          <UserCard users ={Data[index]} color = {colors[changeColor]} />
+        }
+        <button  onClick= { changeIndex } alt=""> 
+            <img src=  "./src/assets/sampling.png" alt="" /> 
+        </button> 
     </div>
   )
 }
 
 export default App
+
